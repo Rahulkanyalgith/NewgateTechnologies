@@ -5,32 +5,46 @@ import { ArrowUpRight, ExternalLink } from "lucide-react"
 
 const projects = [
   {
-    title: "FinFlow Dashboard",
-    category: "Web Application",
-    description: "A comprehensive financial analytics dashboard with real-time data visualization and automated reporting.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "ERP System - DSEU",
+    category: "Enterprise Platform",
+    description:
+      "Design and implement a centralized, role-based ERP system for Delhi Skill and Entrepreneurship University (DSEU) to manage academics, administration, finance, placements, and skill programs across all campuses with real-time data, automation, transparency, and scalability, aligned with DSEU's skill-focused education model.",
+    tags: ["ERP", "Role-Based", "Multi-Campus"],
     color: "from-primary/25 to-primary/5",
   },
   {
-    title: "MediTrack Mobile",
-    category: "Mobile App",
-    description: "Cross-platform health tracking application with AI-powered insights and seamless wearable integration.",
-    tags: ["React Native", "AI/ML", "Firebase"],
+    title: "DSEU Exam Portal",
+    category: "Education Platform",
+    description: "Examination portal for Delhi Skill and Entrepreneurship University with student access and streamlined workflows.",
+    tags: ["Portal", "Education", "Secure"],
     color: "from-chart-2/25 to-chart-2/5",
+    link: "https://exam.dseu.ac.in/",
   },
+  // {
+  //   title: "Scheme Seva",
+  //   category: "GovTech",
+  //   description:
+  //     "Explore Government Schemes for You. Get information about all the government schemes, categorized and easy to explore.",
+  //   tags: ["Gov Schemes", "Discovery", "Public Services"],
+  //   color: "from-chart-4/25 to-chart-4/5",
+  //   link: "https://scheme-seva-gov.vercel.app/",
+  // },
   {
-    title: "EcoMarket Platform",
-    category: "E-Commerce",
-    description: "Sustainable marketplace connecting eco-conscious consumers with verified green product vendors.",
-    tags: ["Next.js", "Stripe", "MongoDB"],
-    color: "from-chart-4/25 to-chart-4/5",
-  },
-  {
-    title: "CloudSync Enterprise",
-    category: "SaaS Platform",
-    description: "Enterprise-grade cloud file management system with advanced security and team collaboration features.",
-    tags: ["TypeScript", "AWS", "GraphQL"],
+    title: "Base Academy",
+    category: "EdTech",
+    description:
+      "Build Your Base - Build Your Future. Crush classes 6-12 with lit courses! Master Math, Science, English + level up in Commerce, Humanities, or Science streams. Your future, your flex.",
+    tags: ["Learning", "K-12", "Courses"],
     color: "from-primary/25 to-chart-3/5",
+    link: "https://www.baseacademy.in/",
+  },
+  {
+    title: "BimaScore",
+    category: "InsurTech",
+    description: "AI-powered health insurance with smart underwriting and personalized plans.",
+    tags: ["AI", "Health Insurance", "Risk"],
+    color: "from-chart-2/25 to-primary/5",
+    link: "https://www.bimascore.com/",
   },
 ]
 
