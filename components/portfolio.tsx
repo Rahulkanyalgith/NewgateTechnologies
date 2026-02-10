@@ -4,31 +4,24 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { ArrowUpRight, ExternalLink } from "lucide-react"
 
 const projects = [
+
   {
-    title: "ERP System - DSEU",
-    category: "Enterprise Platform",
-    description:
-      "Design and implement a centralized, role-based ERP system for Delhi Skill and Entrepreneurship University (DSEU) to manage academics, administration, finance, placements, and skill programs across all campuses with real-time data, automation, transparency, and scalability, aligned with DSEU's skill-focused education model.",
-    tags: ["ERP", "Role-Based", "Multi-Campus"],
-    color: "from-primary/25 to-primary/5",
-  },
-  {
-    title: "DSEU Exam Portal",
+    title: "ERP System - DSEU Exam Portal",
     category: "Education Platform",
     description: "Examination portal for Delhi Skill and Entrepreneurship University with student access and streamlined workflows.",
     tags: ["Portal", "Education", "Secure"],
     color: "from-chart-2/25 to-chart-2/5",
     link: "https://exam.dseu.ac.in/",
   },
-  // {
-  //   title: "Scheme Seva",
-  //   category: "GovTech",
-  //   description:
-  //     "Explore Government Schemes for You. Get information about all the government schemes, categorized and easy to explore.",
-  //   tags: ["Gov Schemes", "Discovery", "Public Services"],
-  //   color: "from-chart-4/25 to-chart-4/5",
-  //   link: "https://scheme-seva-gov.vercel.app/",
-  // },
+  {
+    title: "Scheme Seva",
+    category: "GovTech",
+    description:
+      "Explore Government Schemes for You. Get information about all the government schemes, categorized and easy to explore.",
+    tags: ["Gov Schemes", "Discovery", "Public Services"],
+    color: "from-chart-4/25 to-chart-4/5",
+    link: "https://scheme-seva-gov.vercel.app/",
+  },
   {
     title: "Base Academy",
     category: "EdTech",

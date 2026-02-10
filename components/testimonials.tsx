@@ -5,24 +5,24 @@ import { Star, Quote } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CEO, FinFlow Inc.",
+    name: "Prof. Shushil Sharma",
+    role: "Program Lead, DSEU Exam Portal",
     content:
-      "NewGate Technologies transformed our outdated platform into a sleek, modern application. Their attention to detail and technical expertise exceeded our expectations. The team delivered on time and the results speak for themselves.",
+      "The DSEU Exam Portal was delivered with a strong focus on reliability and student experience. The workflows are streamlined, secure, and easy to manage across departments. We saw immediate gains in transparency and turnaround time.",
     rating: 5,
   },
   {
-    name: "Marcus Rodriguez",
-    role: "CTO, MediTrack Health",
+    name: "Manish",
+    role: "Product Head, BimaScore AI",
     content:
-      "Working with NewGate was a game-changer. They understood our complex requirements from day one and delivered a mobile app that our users love. Their communication and professionalism are top-notch.",
+      "NewGate helped us ship a robust AI-driven health insurance platform. Their team handled complex integrations and delivered a polished user experience without compromising on speed or security.",
     rating: 5,
   },
   {
-    name: "Emily Watson",
-    role: "Founder, EcoMarket",
+    name: "Himanshu",
+    role: " Base Academy",
     content:
-      "The team at NewGate built our entire e-commerce platform from scratch. Their modern approach to development and design resulted in a platform that not only looks amazing but performs flawlessly under heavy traffic.",
+      "They translated our learning vision into a vibrant, scalable platform for classes 6-12. The rollout was smooth, performance is excellent, and the UI resonates with students and parents alike.",
     rating: 5,
   },
 ]
