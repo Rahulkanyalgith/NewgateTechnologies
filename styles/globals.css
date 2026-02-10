@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(1200px 600px at 20% -10%, rgba(12, 74, 110, 0.12), transparent 60%),
+    radial-gradient(800px 500px at 90% 10%, rgba(14, 116, 144, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.85));
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-display {
+    font-family: "Playfair Display", "Times New Roman", serif;
+  }
+  .frosted-card {
+    box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+  }
+  .soft-divider {
+    background-image: linear-gradient(90deg, rgba(15, 118, 110, 0), rgba(15, 118, 110, 0.35), rgba(15, 118, 110, 0));
+  }
+}
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 222 26% 12%;
+    --card: 210 33% 99%;
+    --card-foreground: 222 26% 12%;
+    --popover: 210 33% 99%;
+    --popover-foreground: 222 26% 12%;
+    --primary: 188 55% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 27% 94%;
+    --secondary-foreground: 222 26% 12%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 14% 42%;
+    --accent: 188 40% 92%;
+    --accent-foreground: 188 55% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 18% 88%;
+    --input: 215 18% 88%;
+    --ring: 188 55% 35%;
+    --chart-1: 188 55% 36%;
+    --chart-2: 162 56% 38%;
+    --chart-3: 215 40% 28%;
+    --chart-4: 35 70% 62%;
+    --chart-5: 10 70% 62%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background-color: rgba(14, 116, 144, 0.22);
+  }
+}
