@@ -19,9 +19,9 @@ const services = [
   },
   {
     icon: Smartphone,
-    title: "Mobile App Development",
+    title: "Enterprise ERP Systems",
     description:
-      "Native and cross-platform mobile applications that deliver seamless experiences across iOS and Android.",
+      "Enterprise-grade ERP platforms that unify finance, operations, and inventory with secure, scalable workflows.",
   },
   {
     icon: Palette,

@@ -86,9 +86,9 @@ export function Hero() {
           }`}
         >
           {[
-            { value: "50+", label: "Projects Delivered" },
-            { value: "30+", label: "Happy Clients" },
-            { value: "5+", label: "Years Experience" },
+            { value: "10+", label: "Projects Delivered" },
+            { value: "10+", label: "Happy Clients" },
+            { value: "3+", label: "Years Experience" },
             { value: "99%", label: "Client Satisfaction" },
           ].map((stat) => (
             <div key={stat.label} className="text-center rounded-2xl border border-border bg-card/60 px-4 py-5 frosted-card">
