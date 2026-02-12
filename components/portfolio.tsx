@@ -68,14 +68,18 @@ export function Portfolio() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <div
+            <a
               key={project.title}
-              className={`group relative overflow-hidden rounded-2xl border border-border bg-card/70 backdrop-blur-sm frosted-card transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className={`group relative block overflow-hidden rounded-2xl border border-border bg-card/70 backdrop-blur-sm frosted-card transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : "0ms" }}
+              aria-label={`Open ${project.title}`}
             >
               {/* Top gradient band */}
               <div className={`h-48 bg-gradient-to-br ${project.color} relative flex items-center justify-center`}>
@@ -117,7 +121,7 @@ export function Portfolio() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

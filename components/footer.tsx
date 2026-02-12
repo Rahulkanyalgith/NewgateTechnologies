@@ -48,10 +48,11 @@ export function Footer() {
               Contact NewGate
             </p>
             <a
-              href="mailto:NewGateechnologies.app"
+              href="mailto:rahulfreelancersintech@gmail.com
+"
               className="text-lg sm:text-2xl md:text-3xl font-light flex items-center gap-2 group text-foreground/90 hover:text-emerald-300 transition-colors"
             >
-             NewGateechnologies.app
+             rahulfreelancersintech@gmail.com
               <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-400/60 group-hover:text-emerald-400 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
             </a>
           </div>
