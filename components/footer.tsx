@@ -34,7 +34,7 @@ export function Footer() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight max-w-4xl tracking-tight bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent font-display">
-            Your strategy. Our engineering. Premium digital results.
+            Strategy-led. Engineering-driven. Modern digital experiences.
           </h2>
           <p className="mt-6 text-muted-foreground max-w-2xl text-base sm:text-lg leading-relaxed">
             Partner with NewGate to build elegant, high-performing products that scale with confidence.
