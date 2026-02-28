@@ -42,58 +42,63 @@ export function WhyChooseUs() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="why-us" className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/70 via-transparent to-transparent" />
+    <section id="why-us" className="relative py-28 lg:py-36">
+      {/* Section divider */}
+      <div className="absolute top-0 left-0 right-0 h-px section-divider" />
+
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-transparent to-transparent pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <div
-          className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${
+          className={`text-center max-w-2xl mx-auto mb-20 transition-all duration-700 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-sm font-medium text-primary tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-muted/40 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Why Choose Us
-          </span>
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
-            Built on <span className="text-primary">Trust</span> & Excellence
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground leading-[1.15] tracking-tight text-balance">
+            Built on <span className="gradient-text">trust</span> & excellence
           </h2>
-          <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-            We do not just write code. We build partnerships that deliver measurable results
+          <p className="mt-6 text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
+            We don&apos;t just write code. We build partnerships that deliver measurable results
             for your business.
           </p>
         </div>
 
         {/* Reasons Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {reasons.map((reason, i) => (
             <div
               key={reason.title}
-              className={`group relative rounded-2xl border border-border bg-card/70 p-8 backdrop-blur-sm frosted-card transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${
+              className={`group relative rounded-2xl border border-border/40 bg-card/50 p-7 backdrop-blur-sm transition-all duration-500 hover:border-primary/20 hover:bg-card/80 hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.3)] ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-5">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center rounded-xl bg-primary/10 p-3 border border-primary/10 group-hover:bg-primary/15 transition-colors duration-300">
-                    <reason.icon className="h-6 w-6 text-primary" />
+                  <div className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 p-3 border border-primary/10 group-hover:border-primary/20 transition-all duration-300">
+                    <reason.icon className="h-5 w-5 text-primary" />
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     {reason.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-muted-foreground leading-relaxed text-[15px] mb-5">
                     {reason.description}
                   </p>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-primary">
+                  <div className="flex items-baseline gap-2.5 pt-4 border-t border-border/30">
+                    <span className="text-2xl font-bold gradient-text tracking-tight">
                       {reason.metric}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-muted-foreground font-medium">
                       {reason.metricLabel}
                     </span>
                   </div>

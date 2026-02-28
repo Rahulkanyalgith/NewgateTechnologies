@@ -19,7 +19,7 @@ export default function Page() {
         <Portfolio />
         <WhyChooseUs />
         <Testimonials />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </>

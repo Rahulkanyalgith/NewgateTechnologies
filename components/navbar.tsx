@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, ChevronRight } from "lucide-react"
+import { Menu, X, ChevronRight, ArrowRight } from "lucide-react"
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -16,58 +16,42 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-    return () => {
-      document.body.style.overflow = ""
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
   }, [isMobileMenuOpen])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "py-3" : "py-5"}`}>
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className={`absolute top-0 left-1/2 -translate-x-1/2 h-24 w-3/4 rounded-b-full blur-[90px] transition-all duration-500 ${
-            isScrolled ? "bg-primary/10 opacity-60" : "bg-primary/15 opacity-80"
-          }`}
-        />
-      </div>
-
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled ? "py-3" : "py-5"}`}>
       <nav
-        className={`relative mx-auto flex items-center justify-between transition-all duration-500 ${
+        className={`relative mx-auto flex items-center justify-between transition-all duration-500 ease-out ${
           isScrolled
-            ? "w-[92%] md:w-[85%] lg:w-[980px] rounded-full border border-border bg-background/70 px-4 py-2.5 backdrop-blur-xl shadow-[0_18px_50px_rgba(15,23,42,0.1)]"
+            ? "w-[92%] md:w-[88%] lg:w-[1040px] rounded-2xl border border-border/50 bg-background/80 px-5 py-2.5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
             : "w-full max-w-7xl px-6 lg:px-8"
         }`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors duration-300">
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
             <span className="text-sm font-bold text-primary font-mono">NG</span>
           </div>
-          <span className="text-lg font-semibold text-foreground tracking-[0.02em] font-display group-hover:text-primary transition-colors duration-300">
-            NewGate<span className="text-primary">.</span>
+          <span className="text-lg font-semibold text-foreground tracking-tight">
+            NewGate<span className="text-primary font-bold">.</span>
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1 rounded-full border border-border/60 bg-secondary/40 p-1 backdrop-blur-sm">
+        <div className="hidden md:flex items-center gap-0.5 rounded-xl border border-border/40 bg-muted/40 p-1 backdrop-blur-sm">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="px-4 py-1.5 text-sm font-medium rounded-full text-muted-foreground hover:text-foreground hover:bg-background/70 transition-all duration-300"
+              className="relative px-4 py-1.5 text-[13px] font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-background/80 transition-all duration-200"
             >
               {link.label}
             </a>
@@ -77,27 +61,25 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-           
-            onClick={(e) => {
-              e.preventDefault()
-              window.location.href = `${window.location.pathname}`
-              // force a reload so the page refreshes
-              window.location.reload()
-            }}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20"
+            href="#contact"
+            className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
           >
-            Get Started
+            Start a Project
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="md:hidden relative h-10 w-10 rounded-full border border-border/60 bg-background/60 text-foreground backdrop-blur-sm"
+          className="md:hidden relative flex h-10 w-10 items-center justify-center rounded-xl border border-border/50 bg-muted/40 text-foreground backdrop-blur-sm transition-colors hover:bg-muted/60"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMobileMenuOpen ? <X className="h-5 w-5 mx-auto" /> : <Menu className="h-5 w-5 mx-auto" />}
+          <div className="relative h-5 w-5">
+            <Menu className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}`} />
+            <X className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}`} />
+          </div>
         </button>
       </nav>
 
@@ -107,33 +89,29 @@ export function Navbar() {
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-xl" onClick={() => setIsMobileMenuOpen(false)} />
-        <div className="relative mx-auto mt-24 w-[90%] max-w-md rounded-3xl border border-border bg-background/80 p-4 shadow-2xl">
-          <div className="flex flex-col gap-2">
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-2xl" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className={`relative mx-auto mt-24 w-[90%] max-w-md rounded-2xl border border-border/50 bg-card/90 p-2 shadow-2xl backdrop-blur-xl transition-all duration-300 ${isMobileMenuOpen ? "translate-y-0 scale-100" : "-translate-y-4 scale-95"}`}>
+          <div className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="flex items-center justify-between rounded-2xl px-4 py-3 text-base text-foreground/80 hover:text-foreground hover:bg-secondary/40 transition-all duration-300"
+                className="flex items-center justify-between rounded-xl px-4 py-3.5 text-[15px] text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span className="font-medium">{link.label}</span>
-                <ChevronRight className="h-5 w-5 opacity-40" />
+                <ChevronRight className="h-4 w-4 opacity-30" />
               </a>
             ))}
           </div>
-          <div className="mt-4">
+          <div className="mt-2 p-2 pt-2 border-t border-border/30">
             <a
-            
-              className="block w-full text-center rounded-2xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300"
-              onClick={(e) => {
-                e.preventDefault()
-                setIsMobileMenuOpen(false)
-                window.location.href = `${window.location.pathname}`
-                window.location.reload()
-              }}
+              href="#contact"
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Get Started
+              Start a Project
+              <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>

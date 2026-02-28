@@ -1,10 +1,10 @@
-import Image from "next/image"
-import { ArrowUpRight, Linkedin, Twitter, Github, Youtube, Sparkles } from "lucide-react"
+import { ArrowUpRight, Linkedin, Twitter, Github, Youtube, ArrowRight } from "lucide-react"
 
 const primaryLinks = [
-  { label: "How We Work", href: "#services" },
-  { label: "Featured Work", href: "#portfolio" },
-  { label: "Why Choose Us", href: "#why-us" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Why Us", href: "#why-us" },
 ]
 
 const socialLinks = [
@@ -18,51 +18,56 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden border-t border-emerald-500/20 bg-gradient-to-b from-background via-background/85 to-background pt-16 sm:pt-20 lg:pt-28 pb-10">
-      {/* Decorative gradients */}
-      <div className="absolute top-0 right-0 h-80 w-80 sm:h-[460px] sm:w-[460px] rounded-full bg-emerald-500/15 blur-[100px] opacity-40 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 h-80 w-80 sm:h-[460px] sm:w-[460px] rounded-full bg-cyan-500/10 blur-[110px] opacity-35 pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-blue-500/10 blur-[90px] opacity-25 pointer-events-none" />
+    <footer className="relative overflow-hidden border-t border-border/30 bg-gradient-to-b from-background via-card/30 to-background pt-20 sm:pt-24 lg:pt-32 pb-10">
+      {/* Decorative gradients — use theme colors */}
+      <div className="absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-primary/[0.06] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-chart-3/[0.05] blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Top section */}
-        <div className="mb-14 sm:mb-20 lg:mb-24">
-          <div className="flex items-center gap-2 mb-4 sm:mb-6">
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-400" />
-            <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-emerald-400 font-semibold">
-              Ready to elevate
-            </span>
+        {/* CTA Section */}
+        <div className="mb-20 lg:mb-28">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-muted/40 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            Ready to elevate
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight max-w-4xl tracking-tight bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent font-display">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] max-w-4xl tracking-tight gradient-text">
             Strategy-led. Engineering-driven. Modern digital experiences.
           </h2>
-          <p className="mt-6 text-muted-foreground max-w-2xl text-base sm:text-lg leading-relaxed">
+          <p className="mt-6 text-muted-foreground max-w-2xl text-lg leading-relaxed">
             Partner with NewGate to build elegant, high-performing products that scale with confidence.
           </p>
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-2.5 mt-8 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_hsl(var(--primary)/0.2)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] hover:bg-primary/90 transition-all duration-300"
+          >
+            Start a Conversation
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
 
         {/* Middle section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 sm:gap-12 lg:gap-16 mb-16 sm:mb-20 lg:mb-24 pb-12 sm:pb-16 border-b border-emerald-500/20">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-16 mb-20 lg:mb-24 pb-12 border-b border-border/30">
+          {/* Email */}
           <div className="w-full lg:w-auto">
-            <p className="text-emerald-400/70 mb-3 sm:mb-4 text-xs uppercase tracking-[0.3em] font-semibold">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-3 font-semibold">
               Contact NewGate
             </p>
             <a
-              href="mailto:rahulfreelancersintech@gmail.com
-"
-              className="text-lg sm:text-2xl md:text-3xl font-light flex items-center gap-2 group text-foreground/90 hover:text-emerald-300 transition-colors"
+              href="mailto:rahulfreelancersintech@gmail.com"
+              className="text-lg sm:text-xl md:text-2xl font-medium flex items-center gap-2 group text-foreground/80 hover:text-primary transition-colors duration-300"
             >
-             rahulfreelancersintech@gmail.com
-              <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-400/60 group-hover:text-emerald-400 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
+              rahulfreelancersintech@gmail.com
+              <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 w-full lg:w-auto">
+          {/* Nav links */}
+          <div className="flex flex-wrap gap-8 md:gap-10 w-full lg:w-auto">
             {primaryLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-base sm:text-lg text-foreground/60 hover:text-emerald-400 transition-colors duration-300 font-medium"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
               >
                 {link.label}
               </a>
@@ -71,26 +76,24 @@ export function Footer() {
         </div>
 
         {/* Brand highlight */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 select-none">
-        
-          <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black leading-none tracking-tighter bg-gradient-to-b from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        <div className="flex items-center justify-center mb-16 select-none overflow-hidden">
+          <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black leading-none tracking-tighter gradient-text opacity-80">
             NewGate
           </span>
         </div>
 
         {/* Footer bottom */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4 pt-8 sm:pt-12 border-t border-emerald-500/20 text-xs sm:text-sm text-muted-foreground">
-          <p className="font-medium">© {currentYear} NewGate Technologies. All rights reserved.</p>
-          <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4 pt-8 border-t border-border/30 text-sm text-muted-foreground">
+          <p className="font-medium">&copy; {currentYear} NewGate Technologies. All rights reserved.</p>
+          <div className="flex items-center gap-3">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="flex items-center gap-2 text-foreground/60 hover:text-emerald-400 transition-colors duration-300 font-medium"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/30 bg-muted/20 text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
                 aria-label={link.label}
               >
                 <link.icon className="h-4 w-4" />
-                <span>{link.label}</span>
               </a>
             ))}
           </div>
